@@ -3,4 +3,5 @@
 <p> <%= @wine.year %> </p>
 <p> <%= @wine.country %> </p>
 <p> <%= @wine.review %> </p>
-<%= link_to 'Remove', @dog, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= button_to 'Edit', edit_wine_path(@wine), method: 'get'%>
+<%= link_to 'Remove', @wine, method: :delete, data: { confirm: 'Are you sure?' } %>
