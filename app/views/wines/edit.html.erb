@@ -1,2 +1,14 @@
 <h1>Wines#edit</h1>
 <p>Find me in app/views/wines/edit.html.erb</p>
+
+
+<h3>Update wine Details</h3>
+<%= form_with model: @dog do |form| %>
+<%= form.text_field :name, placeholder: @wine.name %>
+<%= form.text_field :color, placeholder: "color" %>
+<%= form.text_field :year, placeholder: "year" %>
+<%= form.text_field :country, placeholder: "country" %>
+<%= form.text_field :review, placeholder: "review" %>
+
+  <%= form.submit %>
+<% end %>

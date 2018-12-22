@@ -1,5 +1,9 @@
-<ul>
+<table>
   <% @wines.each do |wine| %>
-    <li><%= link_to wine.name, wine_path(wine)  %></li>
+    <tr>
+      <td><%= link_to wine.name, wine_path(wine) %></td>
+      <td><%= button_to 'Edit', edit_wine_path(wine), method: 'get'%></td>
+      <td><%= button_to 'Remove', wine_path(wine), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
   <% end %>
-</ul>
+</table>
+<%= link_to "Add a New Wine", new_wine_path %>
