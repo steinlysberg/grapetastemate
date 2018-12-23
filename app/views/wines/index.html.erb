@@ -1,9 +1,40 @@
-<table>
-  <% @wines.each do |wine| %>
-    <tr>
-      <td><%= link_to wine.name, wine_path(wine) %></td>
-      <td><%= button_to 'Edit', edit_wine_path(wine), method: 'get'%></td>
-      <td><%= button_to 'Remove', wine_path(wine), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
-  <% end %>
-</table>
-<%= link_to "Add a New Wine", new_wine_path %>
+
+
+  <div class="container">
+    <div class="button">
+      <%= link_to "Add a New Wine", new_wine_path %>
+    </div>
+  </div>
+  <section class="section">
+  <div class="container">
+    <% @wines.each do |wine| %>
+      <div class="card">
+
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="https://media.gq.com/photos/5582ed7309f0bee564408a6b/1:1/w_96,h_96,c_limit/slideshows-mens-standalone-upgrader-living-overrated-wines-0006t.jpg" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4"><%= link_to wine.name, wine_path(wine) %></p>
+              <p class="subtitle is-6">
+
+
+                <%= wine.color + ", " %>
+
+                <%= wine.year + ", " %>
+
+                <%= wine.country %>
+
+              </p>
+            </div>
+          </div>
+          <div class="content">
+            <%= wine.review %>
+          </div>
+      </div>
+      <% end %>
+    </div>
+</section>
