@@ -1,10 +1,30 @@
-<h3>Update wine Details</h3>
-  <%= form_with model: @wine do |form| %>
-  <%= form.text_field :name, value: @wine.name %>
-  <%= form.text_field :color, value: @wine.color %>
-  <%= form.text_field :year, value: @wine.year %>
-  <%= form.text_field :country, value: @wine.country %>
-  <%= form.text_field :review, value: @wine.review %>
+<section class="section">
+  <div class="container">
 
-  <%= form.submit %>
-<% end %>
+    <p class="subtitle">Edit a wine</p>
+    <%= form_with model: @wine do |form| %>
+
+      <%= form.text_field :name, value: @wine.name, required: true %>
+      <br>
+
+      <%= form.radio_button(:color, "Red", required: true ) %>
+      <%= form.label(:color_red, "Red") %>
+      <%= form.radio_button(:color, "White") %>
+      <%= form.label(:color_white, "White") %>
+      <%= form.radio_button(:color, "Rose") %>
+      <%= form.label(:color_rose, "Rose") %>
+      <%= form.radio_button(:color, "Sparkling") %>
+      <%= form.label(:color_sparkling, "Sparkling") %>
+
+      <br>
+      <%= form.text_field :year, value: @wine.year, required: true %>
+      <br>
+      <%= form.text_field :country, value: @wine.country, required: true %>
+      <br>
+      <%= form.text_area :review,  value: @wine.review, required: true %>
+      <br>
+      <%= form.submit %>
+    <% end %>
+
+  </div>
+</section>

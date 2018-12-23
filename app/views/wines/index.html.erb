@@ -19,7 +19,16 @@
             </div>
             <div class="media-content">
               <p class="title is-4"><%= link_to wine.name, wine_path(wine) %></p>
-              <p class="subtitle is-6"><%= wine.color + ", " + wine.year + ", " + wine.country %></p>
+              <p class="subtitle is-6">
+
+
+                <%= wine.color + ", " %>
+
+                <%= wine.year + ", " %>
+
+                <%= wine.country %>
+
+              </p>
             </div>
           </div>
           <div class="content">

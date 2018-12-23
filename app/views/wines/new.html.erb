@@ -1,10 +1,30 @@
-<h3>Create a wine</h3>
-<%= form_with model: @wine do |form| %>
-  <%= form.text_field :name, placeholder: "name" %>
-  <%= form.text_field :color, placeholder: "color" %>
-  <%= form.text_field :year, placeholder: "year" %>
-  <%= form.text_field :country, placeholder: "country" %>
-  <%= form.text_field :review, placeholder: "review" %>
+<section class="section">
+<div class="container">
 
+<p class="subtitle">Write about a wine</p>
+<%= form_with model: @wine do |form| %>
+
+  <%= form.text_field :name, placeholder: "Name", required: true %>
+  <br>
+
+  <%= form.radio_button(:color, "Red", required: true ) %>
+  <%= form.label(:color_red, "Red") %>
+  <%= form.radio_button(:color, "White") %>
+  <%= form.label(:color_white, "White") %>
+  <%= form.radio_button(:color, "Rose") %>
+  <%= form.label(:color_rose, "Rose") %>
+  <%= form.radio_button(:color, "Sparkling") %>
+  <%= form.label(:color_sparkling, "Sparkling") %>
+
+  <br>
+  <%= form.text_field :year, placeholder: "Year", required: true %>
+  <br>
+  <%= form.text_field :country, placeholder: "Country", required: true %>
+  <br>
+  <%= form.text_area :review, placeholder: "Review", required: true %>
+  <br>
   <%= form.submit %>
 <% end %>
+
+</div>
+</section>
